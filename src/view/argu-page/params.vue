@@ -2,7 +2,7 @@
   <div>
     <Card>
       <h2>ID: {{ $route.params.id }}</h2>
-      <Button @click="close">调用closeTag方法关闭本页</Button>
+      <Button @click="close">Call closeTag method to close this page</Button>
     </Card>
   </div>
 </template>
@@ -17,8 +17,8 @@ export default {
     ]),
     close () {
       /**
-       * 如果是调用closeTag方法，普通的页面传入的对象参数只需要写name字段即可
-       * 如果是动态路由和带参路由，需要传入query或params字段，用来区别关闭的是参数为多少的页面
+       * If is call closeTag method, common page of the incoming object parameters you just need to write the name field
+       * If it is a dynamic routing and routing, need to query or the params field, is used to distinguish closed parameters for how many pages
        */
       this.closeTag({
         name: 'params',
