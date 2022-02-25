@@ -15,9 +15,9 @@ import '@/assets/icons/iconfont.css'
 import TreeTable from 'tree-table-vue'
 import VOrgTree from 'v-org-tree'
 import 'v-org-tree/dist/v-org-tree.css'
-import { initRouter } from '@/libs/router-util' // ①新增  引入动态菜单渲染
+import { initRouter } from '@/libs/router-util' // (1) the introduction of new dynamic menu rendering
 import 'xterm/dist/xterm.css'
-// 实际打包时应该不引入mock
+// Actual packaging should not introduce the mock
 /* eslint-disable */
 if (process.env.NODE_ENV !== 'production') require('@/mock')
 
@@ -27,19 +27,19 @@ Vue.use(iView, {
 Vue.use(TreeTable)
 Vue.use(VOrgTree)
 /**
- * @description 注册admin内置插件
+ * @description The registered admin plug-ins
  */
 installPlugin(Vue)
 /**
- * @description 生产环境关掉提示
+ * @description Turn off the prompt production environment
  */
 Vue.config.productionTip = false
 /**
- * @description 全局注册应用配置
+ * @description Global registration application configuration
  */
 Vue.prototype.$config = config
 /**
- * 注册指令
+ * Registration instructions
  */
 importDirective(Vue)
 Vue.directive('clickOutside', clickOutside)
@@ -52,6 +52,6 @@ new Vue({
   store,
   render: h => h(App),
   mounted() {
-    initRouter() // ①新增 调用方法,动态生成路由,
+    initRouter() // (1) the new method is called, dynamically generated routing,
   }
 })

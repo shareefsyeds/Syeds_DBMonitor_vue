@@ -1,28 +1,28 @@
 export default {
   /**
-   * @description 配置显示在浏览器标签的title
+   * @description Configuration is displayed in the browser title tags
    */
-  title: 'DBmoitor 数据库监控平台',
+  title: 'DBmoitor database monitoring platform',
   /**
-   * @description token在Cookie中存储的天数，默认1天
+   * @description token the number of days stored in the Cookie, the default 1 day
    */
   cookieExpires: 1,
   /**
-   * @description 是否使用国际化，默认为false
-   *              如果不使用，则需要在路由中给需要在菜单中展示的路由设置meta: {title: 'xxx'}
-   *              用来在菜单中显示文字
+   * @description Whether to use internationalization, by default false
+   *              If you don't use, you will need to show needs in the menu in routing routing setting meta: {title: 'xxx'}
+   *              Used to display text in a menu
    */
   useI18n: false,
   /**
-   * @description api请求基础路径
+   * @description api Request basis path
    */
   baseUrl: {
     // dev: 'https://www.easy-mock.com/mock/5add9213ce4d0e69998a6f51/iview-admin/',
-    dev: 'http://192.168.48.51:8000/',
+    dev: 'http://172.23.162.119:8000/',
     pro: 'http://192.168.48.51:8000/'
   },
   /**
-   * @description 默认打开的首页的路由name值，默认为home
+   * @description The default name to open the first page of value, the default for the home
    */
   homeName: 'home',
   /**
@@ -30,8 +30,8 @@ export default {
    */
   plugin: {
     // 'error-store': {
-    //   showInHeader: false, // 设为false后不会在顶部显示错误日志徽标
-    //   developmentOff: false // 设为true后在开发环境不会收集错误信息，方便开发中排查错误
+    //   showInHeader: false, // Set to false logo will not be shown at the top after error log
+    //   developmentOff: false // Set to true after won't collect error information in the development environment, convenient development error screen
     // }
   }
 }

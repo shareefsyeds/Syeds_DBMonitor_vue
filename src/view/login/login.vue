@@ -6,11 +6,11 @@
   <div class="login">
     <div class="login-con">
       <Card icon="log-in"
-            title="欢迎登录"
+            title="Welcome to login"
             :bordered="false">
         <div class="form-con">
           <login-form @on-success-valid="handleSubmit"></login-form>
-          <p class="login-tip">请输入账户密码</p>
+          <p class="login-tip">Please enter the account password</p>
         </div>
       </Card>
     </div>
@@ -36,14 +36,14 @@ export default {
             name: this.$config.homeName
           })
           this.$Message.success({
-            content: '登陆成功',
+            content: 'Log in successfully',
             duration: 3
           })
         }).catch(err => {
-          this.$Message.error(`获取个人信息错误 ${err}`)
+          this.$Message.error(`Error accessing personal information ${err}`)
         })
       }).catch(err => {
-        this.$Message.error(`用户名或密码错误 ${err}`)
+        this.$Message.error(`The user name or password error ${err}`)
       })
     }
   }
