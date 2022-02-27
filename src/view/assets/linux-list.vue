@@ -4,14 +4,14 @@
       <Row>
         <Button @click="add"
                 v-if="addAccessAll"
-                type="primary">添加</Button>&nbsp;
+                type="primary">Add</Button>&nbsp;
         <Input v-model="host_search"
-               placeholder="ip地址"
+               placeholder="IP address"
                style="width: 100px" />&nbsp;
         <Button @click="search"
-                type="primary">搜索</Button>&nbsp;
+                type="primary">search</Button>&nbsp;
         <Button @click="clear_search"
-                type="success">刷新</Button>
+                type="success">Refresh</Button>
       </Row>
       <br>
       <Row>
@@ -30,7 +30,7 @@
               show-total />
       </Row>
       <Row>
-        <Drawer title="Linux主机配置"
+        <Drawer title="Linux host configuration"
                 v-model="create"
                 width="720"
                 :mask-closable="this.close"
@@ -38,37 +38,37 @@
           <Form ref="formData"
                 :model="formData"
                 :rules="ruleValidate">
-            <Alert show-icon>Linux主机配置</Alert>
+            <Alert show-icon>Linux host configuration</Alert>
             <Row :gutter="32">
               <Col span="6">
-              <FormItem label="标签"
+              <FormItem label="Label"
                         label-position="top"
                         prop="tags">
                 <Input v-model="formData.tags"
-                       placeholder="自定义唯一标签" />
+                       placeholder="Custom only一Label" />
               </FormItem>
               </Col>
               <Col span="6">
-              <FormItem label="ip地址"
+              <FormItem label="IP address"
                         label-position="top"
                         prop="host">
                 <Input v-model="formData.host"
-                       placeholder="请填写ip地址" />
+                       placeholder="Please fill in the IP address" />
               </FormItem>
               </Col>
               <Col span="4">
-              <FormItem label="主机名"
+              <FormItem label="Host name"
                         label-position="top"
                         prop="port">
                 <Input v-model="formData.hostname"
-                       placeholder="主机名">
+                       placeholder="Host name">
                 </Input>
               </FormItem>
               </Col>
             </Row>
             <Row :gutter="32">
               <Col span="8">
-              <FormItem label="Linux版本"
+              <FormItem label="Linux version"
                         label-position="top"
                         prop="db_version">
                 <Select v-model="formData.linux_version"
@@ -79,165 +79,165 @@
               </FormItem>
               </Col>
               <Col span="8">
-              <FormItem label="内核版本"
+              <FormItem label="Kernel version"
                         label-position="top"
                         prop="db_version">
                 <Input v-model="formData.linux_kernel"
-                       placeholder="内核">
+                       placeholder="Kernel">
                 </Input>
               </FormItem>
               </Col>
             </Row>
-            <Alert show-icon>操作系统配置</Alert>
+            <Alert show-icon>Operating system configuration</Alert>
             <Row :gutter="32">
               <Col span="6">
-              <FormItem label="操作系统用户名"
+              <FormItem label="Operating system user name"
                         label-position="top"
                         prop="user">
                 <Input v-model="formData.user"
-                             placeholder="操作系统用户名">
+                             placeholder="Operating system user name">
                 </Input>
               </FormItem>
               </Col>
               <Col span="6">
-              <FormItem label="操作系统用户密码"
+              <FormItem label="Operating system user password"
                         label-position="top"
                         prop="password">
                 <Input type="password" v-model="formData.password"
-                             placeholder="操作系统用户密码">
+                             placeholder="Operating system user password">
                 </Input>
               </FormItem>
               </Col>
               <Col span="6">
-              <FormItem label="操作系统ssh端口号"
+              <FormItem label="Operating system the SSH port number"
                         label-position="top"
                         prop="sshport">
                 <InputNumber v-model="formData.sshport"
-                             placeholder="操作系统ssh端口号">
+                             placeholder="Operating system the SSH port number">
                 </InputNumber>
               </FormItem>
               </Col>
             </Row>
-            <Alert show-icon>机房信息</Alert>
+            <Alert show-icon>Room information</Alert>
             <Row :gutter="32">
               <Col span="6">
-              <FormItem label="序列号"
+              <FormItem label="Serial number"
                         label-position="top"
                         prop="serialno">
                 <Input v-model="formData.serialno"
-                       placeholder="序列号">
+                       placeholder="Serial number">
                 </Input>
               </FormItem>
               </Col>
               <Col span="4">
-              <FormItem label="状态"
+              <FormItem label="state"
                         label-position="top"
                         prop="status">
                 <Select v-model="formData.status"
                         placeholder="">
-                  <Option value="0">在线</Option>
-                  <Option value="1">备用</Option>
-                  <Option value="2">下线</Option>
-                  <Option value="3">待用</Option>
-                  <Option value="4">维修</Option>
-                  <Option value="5">重装</Option>
+                  <Option value="0">online</Option>
+                  <Option value="1">The standby</Option>
+                  <Option value="2">offline</Option>
+                  <Option value="3">Stay with</Option>
+                  <Option value="4">maintenance</Option>
+                  <Option value="5">reinstall</Option>
                 </Select>
               </FormItem>
               </Col>
               <Col span="6">
-              <FormItem label="机柜"
+              <FormItem label="cabinet"
                         label-position="top"
                         prop="cabinet">
                 <Input v-model="formData.cabinet"
-                       placeholder="机柜">
+                       placeholder="cabinet">
                 </Input>
               </FormItem>
               </Col>
               <Col span="6">
-              <FormItem label="服务器厂家"
+              <FormItem label="Server manufacturer"
                         label-position="top"
                         prop="factory">
                 <Input v-model="formData.factory"
-                       placeholder="服务器厂家">
+                       placeholder="Server manufacturer">
                 </Input>
               </FormItem>
               </Col>
               <Col span="8">
-              <FormItem label="采购日期"
+              <FormItem label="Date of purchase"
                         label-position="top"
                         prop="purchase_date">
-                <DatePicker v-model="formData.purchase_date" value="yyyymmdd" type="date" placeholder="选择日期" style="width: 200px"></DatePicker>
+                <DatePicker v-model="formData.purchase_date" value="yyyymmdd" type="date" placeholder="Select a date" style="width: 200px"></DatePicker>
               </FormItem>
               </Col>
               <Col span="8">
-              <FormItem label="保修开始日期"
+              <FormItem label="Warranty start date"
                         label-position="top"
                         prop="beginprotection_date">
-                <DatePicker v-model="formData.beginprotection_date"  type="date" placeholder="选择日期" style="width: 200px"></DatePicker>
+                <DatePicker v-model="formData.beginprotection_date"  type="date" placeholder="Select a date" style="width: 200px"></DatePicker>
               </FormItem>
               </Col>
               <Col span="8">
-              <FormItem label="过保日期"
+              <FormItem label="Confirmed date"
                         label-position="top"
                         prop="overprotection_date">
-                <DatePicker v-model="formData.overprotection_date" type="date" placeholder="选择日期" style="width: 200px"></DatePicker>
+                <DatePicker v-model="formData.overprotection_date" type="date" placeholder="Select a date" style="width: 200px"></DatePicker>
               </FormItem>
               </Col>
             </Row>
-            <Alert show-icon>服务器描述</Alert>
+            <Alert show-icon>Server description</Alert>
             <Row :gutter="32">
               <Col span="4">
-              <FormItem label="业务系统"
+              <FormItem label="Business system"
                         label-position="top"
                         prop="bussiness_system">
                 <Input v-model="formData.bussiness_system"
-                       placeholder="归属系统">
+                       placeholder="Ownership system">
                 </Input>
               </FormItem>
               </Col>
               <Col span="4">
-              <FormItem label="系统等级"
+              <FormItem label="System level"
                         label-position="top"
                         prop="db_version">
                 <Select v-model="formData.system_level"
                         placeholder="">
-                  <Option value="0">核心系统</Option>
-                  <Option value="1">重要系统</Option>
-                  <Option value="2">一般系统</Option>
+                  <Option value="0">The core system</Option>
+                  <Option value="1">Important systems</Option>
+                  <Option value="2">一System</Option>
                 </Select>
               </FormItem>
               </Col>
               <Col span="8">
-              <FormItem label="服务器描述"
+              <FormItem label="Server description"
                         label-position="top"
                         prop="res_description">
                 <Input v-model="formData.res_description"
-                       placeholder="服务器描述">
+                       placeholder="Server description">
                 </Input>
               </FormItem>
               </Col>
               <Col span="8">
-              <FormItem label="主要部署软件"
+              <FormItem label="Main software deployment"
                         label-position="top"
                         prop="main_software">
                 <Input v-model="formData.main_software"
-                       placeholder="主要部署软件">
+                       placeholder="Main software deployment">
                 </Input>
               </FormItem>
               </Col>
             </Row>
-            <Alert show-icon>告警配置</Alert>
+            <Alert show-icon>The alarm configuration</Alert>
             <Row :gutter="32">
               <div>
             <Form class="step-form" :label-width="100">
-              <FormItem label="选择告警配置">
+              <FormItem label="Select the alarm configuration">
                 <CheckboxGroup>
-                  <Checkbox v-model="formData.alarm_connect" true-value="1" false-value="0" label="Linux主机通断告警"></Checkbox>
-                  <Checkbox v-model="formData.alarm_cpu" true-value="1" false-value="0" label="cpu使用率告警"></Checkbox>
-                  <Checkbox v-model="formData.alarm_mem" true-value="1" false-value="0" label="内存使用率告警"></Checkbox>
-                  <Checkbox v-model="formData.alarm_swap" true-value="1" false-value="0"  label="swap使用率告警"></Checkbox>
-                  <Checkbox v-model="formData.alarm_disk" true-value="1" false-value="0"  label="磁盘使用率告警"></Checkbox>
-                  <Checkbox v-model="formData.alarm_alert_log" true-value="1" false-value="0"  label="后台日志告警"></Checkbox>
+                  <Checkbox v-model="formData.alarm_connect" true-value="1" false-value="0" label="Linux host on and off the alarm"></Checkbox>
+                  <Checkbox v-model="formData.alarm_cpu" true-value="1" false-value="0" label="Warning CPU utilization"></Checkbox>
+                  <Checkbox v-model="formData.alarm_mem" true-value="1" false-value="0" label="Memory usage warning"></Checkbox>
+                  <Checkbox v-model="formData.alarm_swap" true-value="1" false-value="0"  label="Swap usage warning"></Checkbox>
+                  <Checkbox v-model="formData.alarm_disk" true-value="1" false-value="0"  label="Disk usage warning"></Checkbox>
+                  <Checkbox v-model="formData.alarm_alert_log" true-value="1" false-value="0"  label="Background log alarms"></Checkbox>
                 </CheckboxGroup>
               </FormItem>
             </Form>
@@ -246,9 +246,9 @@
           </Form>
           <div class="demo-drawer-footer" v-show="showfooter" >
             <Button style="margin-right: 8px"
-                    @click="create = false">取消</Button>
+                    @click="create = false">cancel</Button>
             <Button type="primary"
-                    @click="handleSubmit('formData')">提交</Button>
+                    @click="handleSubmit('formData')">submit</Button>
           </div>
         </Drawer>
 
@@ -283,68 +283,68 @@ export default {
       webssh: false,
       columns: [
         {
-          title: '标签',
+          title: 'Label',
           key: 'tags',
           width: 120
         },
         {
-          title: 'IP地址',
+          title: 'IP address',
           key: 'host',
           width: 150
         },
         {
-          title: '主机名',
+          title: 'Host name',
           key: 'hostname',
           width: 160
         },
         {
-          title: 'linux版本',
+          title: 'Linux version',
           key: 'linux_version',
           width: 100
         },
         {
-          title: '连接用户名',
+          title: 'Connect user name',
           key: 'user',
           width: 110
         },
         {
-          title: '状态',
+          title: 'state',
           key: 'status',
           width: 90,
           render: (h, params) => {
             const statusMap = {
-              0: { color: 'green', desc: '在线' },
-              1: { color: 'gray', desc: '备用' },
-              2: { color: 'gray', desc: '下线' },
-              3: { color: 'gray', desc: '待用' },
-              4: { color: 'gray', desc: '维修' },
-              5: { color: 'gray', desc: '重装' }
+              0: { color: 'green', desc: 'online' },
+              1: { color: 'gray', desc: 'The standby' },
+              2: { color: 'gray', desc: 'offline' },
+              3: { color: 'gray', desc: 'Stay with' },
+              4: { color: 'gray', desc: 'maintenance' },
+              5: { color: 'gray', desc: 'reinstall' }
             }
             const status = params.row.status
             return h(Tag, { props: { color: statusMap[status]['color'] } }, statusMap[status]['desc'])
           }
         },
         {
-          title: '业务系统',
+          title: 'Business systems',
           key: 'bussiness_system',
           width: 90
         },
         {
-          title: '系统等级',
+          title: 'System level',
           key: 'system_level',
           width: 120,
           render: (h, params) => {
             const levelMap = {
-              0: { color: 'red', desc: '核心系统' },
-              1: { color: 'orange', desc: '重要系统' },
-              2: { color: 'gray', desc: '一般系统' }
+              0: { color: 'red', desc: 'Core system' },
+              1: { color: 'orange', desc: 'Important systems' },
+              2: { color: 'gray', desc: '一System' }
             }
             const system_level = params.row.system_level
             return h(Tag, { props: { color: levelMap[system_level]['color'] } }, levelMap[system_level]['desc'])
           }
         },
         {
-          title: '操作',
+          title: 'operation',
           key: 'action',
           width: 200,
           align: 'center',
@@ -365,7 +365,7 @@ export default {
                     this.view(params.index)
                   }
                 }
-              }, '详情'),
+              }, 'details'),
               h('Button', {
                 props: {
                   type: 'success',
@@ -380,11 +380,11 @@ export default {
                     this.update(params.index)
                   }
                 }
-              }, '编辑'),
+              }, 'Editor'),
               h('Poptip', {
                 props: {
                   confirm: true,
-                  title: '确定要删除吗！',
+                  title: 'Sure you want to delete！',
                   transfer: true
                 },
                 style: {
@@ -405,7 +405,7 @@ export default {
                   marginRight: '5px',
                   display: (this.deleteAccessAll !== true) ? 'none' : 'inline-block'
                 }
-              }, '删除')])
+              }, 'delete')])
             ])
           }
         }
@@ -452,19 +452,19 @@ export default {
       },
       ruleValidate: {
         tags: [
-          { required: true, message: '此项目必填', trigger: 'blur' }
+          { required: true, message: 'This project required', trigger: 'blur' }
         ],
         host: [
-          { required: true, message: '此项目必填', trigger: 'blur' }
+          { required: true, message: 'This project required', trigger: 'blur' }
         ],
         hostname: [
-          { required: true, message: '此项目必填', trigger: 'blur' }
+          { required: true, message: 'This project required', trigger: 'blur' }
         ],
         user: [
-          { required: true, message: '此项目必填', trigger: 'blur' }
+          { required: true, message: 'This project required', trigger: 'blur' }
         ],
         password: [
-          { required: true, message: '此项目必填', trigger: 'blur' }
+          { required: true, message: 'This project required', trigger: 'blur' }
         ]
       }
     }
@@ -488,10 +488,10 @@ export default {
   },
   methods: {
     ok_webssh () {
-      this.$Message.info('确认操作')
+      this.$Message.info('Confirm operation ')
     },
     cancel_webssh () {
-      this.$Message.info('取消操作')
+      this.$Message.info('Cancel operation')
     },
     search () {
       console.log(this.host_search)
@@ -507,7 +507,7 @@ export default {
         this.count = res.data.count
         console.log(this.data)
       }).catch(err => {
-        this.$Message.error(`获取linux资源信息错误 ${err}`)
+        this.$Message.error(`Error accessing Linux resource information ${err}`)
       })
     },
     get_linux_parameter (parameter) {
@@ -526,13 +526,13 @@ export default {
           if (!this.updateId) {
             createLinux(this.formData).then(res => {
               console.log(res)
-              this.$Message.success('新增linux配置成功!')
+              this.$Message.success('The new Linux configuration success!')
               this.get_linux_list()
               this.create = false
             }).catch(err => {
               console.log(err.response)
               this.$Message.error({
-                content: `新增linux配置错误 ${Object.entries(err.response.data)}`,
+                content: `New Linux configuration errors ${Object.entries(err.response.data)}`,
                 duration: 10,
                 closable: true
               })
@@ -541,20 +541,20 @@ export default {
             console.log(this.updateId)
             updateLinux(this.updateId, this.formData).then(res => {
               console.log(res)
-              this.$Message.success('更新linux配置成功!')
+              this.$Message.success('Update the Linux configuration success!')
               this.get_linux_list()
               this.create = false
             }).catch(err => {
               console.log(err.response)
               this.$Message.error({
-                content: `更新linux配置错误 ${Object.entries(err.response.data)}`,
+                content: `Update the Linux configuration errors ${Object.entries(err.response.data)}`,
                 duration: 10,
                 closable: true
               })
             })
           }
         } else {
-          this.$Message.error('错误!')
+          this.$Message.error('Error!')
         }
       })
     },
@@ -593,12 +593,12 @@ export default {
       console.log(index, id)
       deleteLinux(id).then(res => {
         console.log(res)
-        this.$Message.success('删除linux配置成功!')
+        this.$Message.success('Linux configuration was removed successfully!')
         this.data.splice(index, 1)
       }).catch(err => {
         console.log(err.response)
         this.$Message.error({
-          content: `删除linux配置错误 ${Object.entries(err.response.data)}`,
+          content: `Delete the Linux configuration errors ${Object.entries(err.response.data)}`,
           duration: 10,
           closable: true
         })
