@@ -38,91 +38,91 @@
           <Form ref="formData"
                 :model="formData"
                 :rules="ruleValidate">
-            <Alert show-icon>基础信息</Alert>
+            <Alert show-icon>Basic information</Alert>
             <Row :gutter="32">
               <Col span="6">
-              <FormItem label="告警类型"
+              <FormItem label="The alarm types"
                         label-position="top"
                         prop="type">
                 <Select v-model="formData.type"
                         placeholder="">
-                  <Option value='1'>Oracle数据库</Option>
-                  <Option value='2'>MySQL数据库</Option>
+                  <Option value='1'>Oracle database</Option>
+                  <Option value='2'>MySQL database</Option>
                   <Option value='3'>Redis</Option>
-                  <Option value='4'>Linux主机</Option>
+                  <Option value='4'>LInux host</Option>
                 </Select>
               </FormItem>
               </Col>
               <Col span="8">
-              <FormItem label="告警名称"
+              <FormItem label="The alarm name"
                         label-position="top"
                         prop="name">
                 <Input v-model="formData.name"
-                             placeholder="告警名称">
+                             placeholder="The alarm name">
                 </Input>
               </FormItem>
               </Col>
             </Row>
-            <Alert show-icon>阈值&配置表</Alert>
+            <Alert show-icon>Threshold & configuration tables</Alert>
             <Row :gutter="32">
               <Col span="4">
-              <FormItem label="运算符"
+              <FormItem label="The operator"
                         label-position="top"
                         prop="judge">
                 <Input v-model="formData.judge"
-                             placeholder="运算符">
+                             placeholder="The operator">
                 </Input>
               </FormItem>
               </Col>
               <Col span="6">
-              <FormItem label="告警阈值"
+              <FormItem label="The alarm threshold"
                         label-position="top"
                         prop="judge_value">
                 <Input v-model="formData.judge_value"
-                             placeholder="请输入数字">
+                             placeholder="Please enter the Numbers">
                 </Input>
               </FormItem>
               </Col>
               <Col span="12">
-              <FormItem label="阈值描述"
+              <FormItem label="Threshold described"
                         label-position="top"
                         prop="judge_des">
                 <Input v-model="formData.judge_des"
-                             placeholder="阈值描述">
+                             placeholder="Threshold described">
                 </Input>
               </FormItem>
               </Col>
             </Row>
             <Row :gutter="32">
               <Col span="6">
-              <FormItem label="告警采集数据表"
+              <FormItem label="The alarm data table"
                         label-position="top"
                         prop="judge_table">
                 <Input v-model="formData.judge_table"
-                       placeholder="告警检查数据表">
+                       placeholder="The alarm inspection data sheet">
                 </Input>
               </FormItem>
               </Col>
               <Col span="8">
-              <FormItem label="告警屏蔽配置表"
+              <FormItem label="The alarm screen configuration tables"
                         label-position="top"
                         prop="conf_table">
                 <Input v-model="formData.conf_table"
-                       placeholder="告警屏蔽配置表">
+                       placeholder="The alarm screen configuration tables">
                 </Input>
               </FormItem>
               </Col>
               <Col span="8">
-              <FormItem label="告警屏蔽配置字段"
+              <FormItem label="The alarm screen configuration field"
                         label-position="top"
                         prop="conf_column">
                 <Input v-model="formData.conf_column"
-                       placeholder="告警屏蔽配置字段">
+                       placeholder="The alarm screen configuration field">
                 </Input>
               </FormItem>
               </Col>
             </Row>
-            <Alert show-icon>告警判断SQL配置</Alert>
+            <Alert show-icon>The alarm judgment SQL configuration</Alert>
             <Row :gutter="32">
               <Col span="24">
               <FormItem prop="judge_sql">
@@ -135,9 +135,9 @@
           </Form>
           <div class="demo-drawer-footer" v-show="showfooter" >
             <Button style="margin-right: 8px"
-                    @click="create = false">取消</Button>
+                    @click="create = false">cancel</Button>
             <Button type="primary"
-                    @click="handleSubmit('formData')">提交</Button>
+                    @click="handleSubmit('formData')">submit</Button>
           </div>
         </Drawer>
 
@@ -160,42 +160,42 @@ export default {
           sortable: true
         },
         {
-          title: '告警类型',
+          title: 'Alarm types',
           key: 'type',
           width: 120,
           render: (h, params) => {
             const typeMap = {
-              1: { desc: 'Oracle数据库' },
-              2: { desc: 'MySQL数据库' },
+              1: { desc: 'Oracle database' },
+              2: { desc: 'MYSQL database' },
               3: { desc: 'Redis' },
-              4: { desc: 'Linux主机' }
+              4: { desc: 'Linux host ' }
             }
             const type = params.row.type
             return h('div', typeMap[type]['desc'])
           }
         },
         {
-          title: '告警名称',
+          title: 'The alarm name',
           key: 'name',
           width: 220
         },
         {
-          title: '运算符',
+          title: 'The operator',
           key: 'judge',
           width: 80
         },
         {
-          title: '阈值',
+          title: 'The threshold value',
           key: 'judge_value',
           width: 100
         },
         {
-          title: '阈值说明',
+          title: 'The threshold that',
           key: 'judge_des',
           width: 200
         },
         {
-          title: '操作',
+          title: 'operation',
           key: 'action',
           width: 200,
           align: 'center',
@@ -216,7 +216,7 @@ export default {
                     this.view(params.index)
                   }
                 }
-              }, '详情'),
+              }, 'details'),
               h('Button', {
                 props: {
                   type: 'success',
@@ -231,11 +231,11 @@ export default {
                     this.update(params.index)
                   }
                 }
-              }, '编辑'),
+              }, 'The editor'),
               h('Poptip', {
                 props: {
                   confirm: true,
-                  title: '确定要删除吗！',
+                  title: 'Sure you want to delete！',
                   transfer: true
                 },
                 style: {
@@ -281,16 +281,16 @@ export default {
       },
       ruleValidate: {
         type: [
-          { required: true, message: '此项目必填', trigger: 'blur' }
+          { required: true, message: 'This project required', trigger: 'blur' }
         ],
         name: [
-          { required: true, message: '此项目必填', trigger: 'blur' }
+          { required: true, message: 'This project required', trigger: 'blur' }
         ],
         judge_table: [
-          { required: true, message: '此项目必填', trigger: 'blur' }
+          { required: true, message: 'This project required', trigger: 'blur' }
         ],
         judge_sql: [
-          { required: true, message: '此项目必填', trigger: 'blur' }
+          { required: true, message: 'This project required', trigger: 'blur' }
         ]
       }
     }
@@ -331,7 +331,7 @@ export default {
         this.count = res.data.count
         console.log(this.data)
       }).catch(err => {
-        this.$Message.error(`获取告警配置信息错误 ${err}`)
+        this.$Message.error(`Error accessing the alarm configuration information ${err}`)
       })
     },
     view (index) {
@@ -346,13 +346,13 @@ export default {
           if (!this.updateId) {
             createAlarmConf(this.formData).then(res => {
               console.log(res)
-              this.$Message.success('新增告警配置成功!')
+              this.$Message.success('New alarm configuration is successful!')
               this.get_alarm_conf_list()
               this.create = false
             }).catch(err => {
               console.log(err.response)
               this.$Message.error({
-                content: `新增告警配置错误 ${Object.entries(err.response.data)}`,
+                content: `New alarm configuration errors ${Object.entries(err.response.data)}`,
                 duration: 10,
                 closable: true
               })
@@ -361,20 +361,20 @@ export default {
             console.log(this.updateId)
             updateAlarmConf(this.updateId, this.formData).then(res => {
               console.log(res)
-              this.$Message.success('更新告警配置成功!')
+              this.$Message.success('Update the alarm configuration is successful!')
               this.get_alarm_conf_list()
               this.create = false
             }).catch(err => {
               console.log(err.response)
               this.$Message.error({
-                content: `更新告警配置错误 ${Object.entries(err.response.data)}`,
+                content: `Update the alarm configuration errors ${Object.entries(err.response.data)}`,
                 duration: 10,
                 closable: true
               })
             })
           }
         } else {
-          this.$Message.error('错误!')
+          this.$Message.error('error!')
         }
       })
     },
@@ -397,12 +397,12 @@ export default {
       console.log(index, id)
       deleteLinux(id).then(res => {
         console.log(res)
-        this.$Message.success('删除linux配置成功!')
+        this.$Message.success('Linux configuration was removed successfully!')
         this.data.splice(index, 1)
       }).catch(err => {
         console.log(err.response)
         this.$Message.error({
-          content: `删除linux配置错误 ${Object.entries(err.response.data)}`,
+          content: `Delete the Linux configuration errors ${Object.entries(err.response.data)}`,
           duration: 10,
           closable: true
         })
