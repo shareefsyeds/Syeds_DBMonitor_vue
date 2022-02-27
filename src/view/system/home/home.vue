@@ -5,10 +5,10 @@
         <Card shadow>
           <p slot="title" style="font-size: larger">
             <Icon type="ios-pie"></Icon>
-            Linux服务器
+            Linux server
           </p>
           <p style="font-size: small; color: black">
-            总数量：{{ this.linux_count }}
+            Total number：{{ this.linux_count }}
           </p>
           <chart-pie3
             style="height: 160px"
@@ -21,10 +21,10 @@
         <Card shadow>
           <p slot="title" style="font-size: larger">
             <Icon type="ios-pie"></Icon>
-            Oracle数据库
+            Oracle database
           </p>
           <p style="font-size: small; color: black">
-            总数量：{{ this.oracle_count }}
+            total number：{{ this.oracle_count }}
           </p>
           <chart-pie3
             style="height: 160px"
@@ -37,10 +37,10 @@
         <Card shadow>
           <p slot="title" style="font-size: larger">
             <Icon type="ios-pie"></Icon>
-            MySQL数据库
+            MySQL database
           </p>
           <p style="font-size: small; color: black">
-            总数量：{{ this.mysql_count }}
+            Total number：{{ this.mysql_count }}
           </p>
           <chart-pie3
             style="height: 160px"
@@ -56,7 +56,7 @@
             Redis
           </p>
           <p style="font-size: small; color: black">
-            总数量：{{ this.redis_count }}
+            Total number：{{ this.redis_count }}
           </p>
           <chart-pie3
             style="height: 160px"
@@ -69,7 +69,7 @@
         <card>
           <p slot="title" style="font-size: larger">
             <Icon type="ios-warning"></Icon>
-            告警消息
+            Alarm message
           </p>
           <Scroll>
             <List>
@@ -145,7 +145,7 @@ export default {
           console.log(this.alarminfoList)
         })
         .catch((err) => {
-          this.$Message.error(`获取告警信息错误 ${err}`)
+          this.$Message.error(`Error accessing the alarm information ${err}`)
         })
     },
     get_linux_stat_list (parameter) {
@@ -157,7 +157,7 @@ export default {
           console.log(this.linux_stat_list)
         })
         .catch((err) => {
-          this.$Message.error(`获取linux状态列表错误 ${err}`)
+          this.$Message.error(`For Linux error status list ${err}`)
         })
     },
     get_oracle_stat_list (parameter) {
@@ -169,7 +169,7 @@ export default {
           console.log(this.data)
         })
         .catch((err) => {
-          this.$Message.error(`获取oracle状态列表错误 ${err}`)
+          this.$Message.error(`Access to the oracle error status list ${err}`)
         })
     },
     get_mysql_stat_list (parameter) {
@@ -181,7 +181,7 @@ export default {
           console.log(this.data)
         })
         .catch((err) => {
-          this.$Message.error(`获取mysql状态列表错误 ${err}`)
+          this.$Message.error(`Access to the mysql error status list ${err}`)
         })
     },
     get_redis_stat_list (parameter) {
@@ -193,7 +193,7 @@ export default {
           console.log(this.data)
         })
         .catch((err) => {
-          this.$Message.error(`获取redis状态列表错误 ${err}`)
+          this.$Message.error(`To obtain a list redis state error ${err}`)
         })
     }
   },

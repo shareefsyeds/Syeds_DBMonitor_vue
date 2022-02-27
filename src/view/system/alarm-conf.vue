@@ -4,14 +4,14 @@
       <Row>
         <Button @click="add"
                 v-if="addAccessAll"
-                type="primary">添加</Button>&nbsp;
+                type="primary">add</Button>&nbsp;
         <Input v-model="alarm_name_search"
-               placeholder="告警名称"
+               placeholder="The alarm name"
                style="width: 100px" />&nbsp;
         <Button @click="search"
-                type="primary">搜索</Button>&nbsp;
+                type="primary">search</Button>&nbsp;
         <Button @click="clear_search"
-                type="success">刷新</Button>
+                type="success">The refresh</Button>
       </Row>
       <br>
       <Row>
@@ -30,7 +30,7 @@
               show-total />
       </Row>
       <Row>
-        <Drawer title="告警配置"
+        <Drawer title="Alarm configuration"
                 v-model="create"
                 width="720"
                 :mask-closable="this.close"

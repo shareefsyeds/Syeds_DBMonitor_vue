@@ -7,7 +7,7 @@
 export default {
   data () {
     return {
-      name: '测试'
+      name: 'test'
     }
   }
 }

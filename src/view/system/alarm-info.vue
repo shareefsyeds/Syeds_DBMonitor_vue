@@ -34,27 +34,27 @@ export default {
           align: 'center'
         },
         {
-          title: '标签',
+          title: 'Label',
           key: 'tags',
           width: 80
         },
         {
-          title: '告警名称',
+          title: 'Alarm name',
           key: 'alarm_type',
           width: 150
         },
         {
-          title: '服务地址',
+          title: 'Service address',
           key: 'url',
           width: 120
         },
         {
-          title: '告警内容',
+          title: 'Alarm content',
           key: 'alarm_content',
           width: 400
         },
         {
-          title: '告警时间',
+          title: 'Alarm time',
           key: 'alarm_time',
           width: 140,
           sortable: true,
@@ -93,7 +93,7 @@ export default {
         this.count = res.data.count
         console.log(this.data)
       }).catch(err => {
-        this.$Message.error(`获取告警信息错误 ${err}`)
+        this.$Message.error(`Error accessing the alarm information ${err}`)
       })
     },
     get_alarm_info_parameter (parameter) {
