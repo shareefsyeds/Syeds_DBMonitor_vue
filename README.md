@@ -1,43 +1,43 @@
-## 项目介绍
+# # the Project the introduction
 
-> 基于 iview-admin 2.5.0
+> -based on iview - admin 2.5.0
 
 
-## 运行
+# # the run
 
-```bush
-1. 下载项目源码
-git clone https://github.com/gumengkai/db_monitor_vue
+` ` ` bush
+1. Download the program source code
+Git clone https://github.com/gumengkai/db_monitor_vue
 
-2. 修改后端API连接地址
-src/config/index.js
-baseUrl:
-    dev: 测试
-    pro: 线上
-示例API地址：47.100.119.84:43278
+2. Modify the backend API connection address
+SRC/config/index. Js
+BaseUrl:
+Dev: testing
+Pro: online
+The example API address: 47.100.119.84:43278
 
-3. 安装依赖包
-yarn install
+3. Install depend on the package
+Yarn install
 
-4. 开发环境运行
-yarn run dev
-```
+4. Development environment
+Yarn run dev
+` ` `
 
-## DEMO
+# # DEMO
 
 > http://122.51.204.250:8080/
 
-> 账户 admin 密码 111111
+> account admin password is 111111
 
-![demo1](src/demo/demo1.jpg)
-![demo2](src/demo/demo2.jpg)
+![not] (SRC/demo/not JPG)
+![demo2] (SRC/demo/demo2. JPG)
 
-## 编译
+# # compiler
 
 > dist
 
-```bush
+` ` ` bush
 yarn build
-```
+` ` `
 
-将dist文件夹部署到nginx即可
+Will be deployed to the dist folder nginx
